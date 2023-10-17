@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { setPokemons, startLoadingPOkemons } from "./pokemonSlice";
 
 export const getPokemons = (page = 0) => {
-    return async (dispatch, getState) => {
+    return async (dispatch, _getState) => {
         dispatch(startLoadingPOkemons());
 
         // realizar fetch

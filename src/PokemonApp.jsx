@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemons } from "./actions/pokemon";
+import { PokemonList } from "./PokemonList";
 
 export const PokemonApp = () => {
     const dispatch = useDispatch();
@@ -20,20 +21,10 @@ export const PokemonApp = () => {
             <div>
                 <h1>PokemonApp</h1>
                 <hr />
-
                 {isLoading ? (
                     <span>Loading...</span>
                 ) : (
-                    <ul>
-                        {pokemons.map((pokemon) => (
-                            <li
-                                key={pokemon.name}
-                                style={{ listStyle: "none" }}
-                            >
-                                {pokemon.name}
-                            </li>
-                        ))}
-                    </ul>
+                    <PokemonList pokemons={pokemons} />
                 )}
 
                 <button
