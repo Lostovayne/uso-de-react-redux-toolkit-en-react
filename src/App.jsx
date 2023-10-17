@@ -2,11 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import { increment, decrement } from "./actions/counter";
+import { increment, decrement, incrementBy } from "./actions/counter";
 
 function App() {
     const { counter } = useSelector((state) => state.counter);
     const dispatch = useDispatch();
+
     return (
         <>
             <div>
@@ -26,6 +27,9 @@ function App() {
                 <button onClick={() => dispatch(increment())}>+</button>
                 <span style={{ padding: "0 1rem" }}>{counter}</span>
                 <button onClick={() => dispatch(decrement())}>-</button>
+                <button onClick={() => dispatch(incrementBy(2))}>
+                    Increment By 2
+                </button>
             </div>
         </>
     );
